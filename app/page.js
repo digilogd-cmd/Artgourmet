@@ -128,8 +128,32 @@ export default function Home() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     border: '1px solid var(--border-subtle)',
-                    marginBottom: '20px'
-                  }} />
+                    marginBottom: '20px',
+                    position: 'relative'
+                  }}>
+                    {/* Golden Vibe Seoul Rule: 하단 검은 반투명 박스 오버레이 + 흰색 텍스트 */}
+                    {product.id === 'find-golden' && (
+                      <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                        padding: '6px 12px',
+                        textAlign: 'left'
+                      }}>
+                        <span style={{ 
+                          color: '#ffffff', 
+                          fontSize: '0.75rem', 
+                          fontWeight: 'bold', 
+                          fontFamily: 'var(--font-heading)',
+                          letterSpacing: '0.05em' 
+                        }}>
+                          GOLDEN VIBE SEOUL
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <div style={{
                     height: '140px',

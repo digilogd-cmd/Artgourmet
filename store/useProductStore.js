@@ -20,6 +20,15 @@ export const useProductStore = create((set) => ({
       launchUrl: '/products/bullet-dodge',
       thumbnail: 'https://digilogd-cmd.github.io/bullet-dodge/default_lobby_banner.png',
       isPremium: true
+    },
+    {
+      id: 'find-golden',
+      name: 'Find Golden',
+      description: 'Find the hidden golden retrievers in the cozy Seoul vibe. / 아늑한 서울의 감성 속에 숨어있는 귀여운 골든리트리버를 찾아내는 힐링 게임.',
+      type: 'game',
+      launchUrl: '/products/findgolden',
+      thumbnail: '/assets/findgolden-thumb.png',
+      isPremium: true
     }
   ],
   addProduct: (product) => set((state) => ({ products: [...state.products, product] })),
