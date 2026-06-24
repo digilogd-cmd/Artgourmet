@@ -126,7 +126,7 @@ export default function Home() {
                     height: '140px', 
                     backgroundImage: `url(${product.thumbnail})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundPosition: product.id === 'somers-translator' ? 'center top' : 'center',
                     border: '1px solid var(--border-subtle)',
                     marginBottom: '20px',
                     position: 'relative'
