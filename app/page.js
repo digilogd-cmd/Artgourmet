@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useProductStore } from '../store/useProductStore';
 import { useFreemiumStore } from '../store/useFreemiumStore';
 import Link from 'next/link';
@@ -54,27 +54,9 @@ const crewMembers = [
   }
 ];
 
-// Interactive Translation Mockup sentences
-const translationLogs = [
-  { original: 'Designing minimalist interface...', translated: '[시스템] 미니멀 인터페이스 디자인 중...' },
-  { original: 'Connecting human intelligence with agentic workflows.', translated: '인간의 지능과 에이전트 워크플로우를 연결하고 있습니다.' },
-  { original: 'Voice stream active: "We build digital gourmet for humanity."', translated: '음성 스트림 활성: "우리는 인류를 위한 디지털 미식을 만듭니다."' },
-  { original: 'Translating ambient sounds into structured insights.', translated: '주변 소리를 구조화된 통찰로 번역하는 중.' },
-  { original: 'David approved the latest build with 0.01s latency.', translated: '디렉터 데이비드가 0.01초 대기 시간의 최신 빌드를 승인했습니다.' }
-];
-
 export default function Home() {
   const { products } = useProductStore();
   const { checkAndUse } = useFreemiumStore();
-  const [logIndex, setLogIndex] = useState(0);
-
-  // Auto-cycling translation logs for Somers UI Mockup
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogIndex((prev) => (prev + 1) % translationLogs.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleLaunch = (e, product) => {
     if (product.isPremium) {
@@ -121,112 +103,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 2. Flagship Project Section [SOMMERZ] */}
-      <section style={{ marginBottom: '120px' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'baseline',
-          borderBottom: '1px solid var(--border-subtle)',
-          paddingBottom: '12px',
-          marginBottom: '40px'
-        }}>
-          <h2 style={{ fontSize: '1.6rem', fontWeight: '400', letterSpacing: '-0.02em' }}>
-            Flagship Project: <span className="text-glow-green">SOMERZ</span>
-          </h2>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>
-            STITCH VIBE ACTIVE
-          </span>
-        </div>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '40px',
-          alignItems: 'center'
-        }}>
-          {/* Interactive UI Mockup */}
-          <div style={{
-            background: 'var(--bg-surface)',
-            border: '1px solid var(--border-subtle)',
-            padding: '32px',
-            position: 'relative',
-            height: '280px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            fontFamily: 'monospace'
-          }}>
-            {/* Visualizer animation header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                <span style={{
-                  width: '8px', height: '8px', borderRadius: '50%',
-                  backgroundColor: 'var(--accent-point)',
-                  boxShadow: '0 0 8px var(--accent-point)',
-                  display: 'inline-block',
-                  animation: 'pulse 1.5s infinite alternate'
-                }} />
-                <span style={{ fontSize: '0.75rem', color: 'var(--accent-point)' }}>SOMERZ_MIC_ACTIVE</span>
-              </div>
-              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>LATENCY: 12ms</span>
-            </div>
-
-            {/* Audio Wave Visualizer Simulation */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '6px',
-              height: '80px'
-            }}>
-              {[20, 60, 40, 80, 50, 90, 30, 70, 45, 85, 35, 65].map((val, idx) => (
-                <div key={idx} style={{
-                  width: '3px',
-                  backgroundColor: 'var(--accent-point)',
-                  borderRadius: '1.5px',
-                  animation: `bounce ${1 + idx * 0.15}s ease-in-out infinite alternate`,
-                  height: `${val}%`
-                }} />
-              ))}
-            </div>
-
-            {/* Translation Output Log */}
-            <div style={{
-              background: '#000',
-              padding: '12px 16px',
-              border: '1px solid rgba(255,255,255,0.04)',
-              minHeight: '80px',
-              fontSize: '0.8rem',
-              lineHeight: '1.4',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}>
-              <p style={{ color: 'var(--text-secondary)' }}>&gt; {translationLogs[logIndex].original}</p>
-              <p style={{ color: 'var(--accent-point)', marginTop: '4px' }}>&gt; {translationLogs[logIndex].translated}</p>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: '400', marginBottom: '16px' }}>
-              Somers Live Translator
-            </h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', lineHeight: '1.7', fontSize: '0.95rem' }}>
-              주변 언어를 실시간 감지하여 한국어로 번역하는 플래그십 AI 오디오 번역기입니다. 극도로 정제된 비주얼 인터페이스 속에 AI 크루들의 고도화된 번역 파이프라인이 유기적으로 내장되어 있습니다.
-            </p>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '0.8rem', lineHeight: '1.6' }}>
-              An revolutionary AI-powered translator that listens to surrounding speech and translates it in real-time. Built upon advanced agentic pipelines hidden behind an extremely clean tech shell.
-            </p>
-            <Link href="/products/somers" className="btn-accent">
-              Launch Sommerz
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Showcase Section (All Projects) */}
+      {/* 2. Showcase Section (All Projects) */}
       <section style={{ marginBottom: '120px' }}>
         <h2 style={{ 
           fontSize: '1.6rem', 
@@ -242,7 +119,7 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
           {products.map(product => (
             <div key={product.id} className="crew-card" style={{ height: '360px' }}>
-              {/* Product Thumbnail or Fallback Grid */}
+              {/* Product Thumbnail */}
               <div className="crew-header">
                 {product.thumbnail ? (
                   <div style={{ 
@@ -292,6 +169,75 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 3. Flagship Project Section [SOMERZ] - Moved below Showcase */}
+      <section style={{ marginBottom: '120px' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'baseline',
+          borderBottom: '1px solid var(--border-subtle)',
+          paddingBottom: '12px',
+          marginBottom: '40px'
+        }}>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: '400', letterSpacing: '-0.02em' }}>
+            Flagship Project: <span className="text-glow-green">SOMERZ</span>
+          </h2>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>
+            STITCH VIBE ACTIVE
+          </span>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '40px',
+          alignItems: 'center'
+        }}>
+          {/* Phone Mockup Frame containing the Capture Image */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '10px'
+          }}>
+            <div style={{
+              width: '260px',
+              border: '2px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '28px',
+              padding: '12px',
+              background: '#020202',
+              boxShadow: '0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(57, 255, 20, 0.05)'
+            }}>
+              <img 
+                src="/assets/somers-preview.png" 
+                alt="Somers Live Translator UI"
+                style={{
+                  width: '100%',
+                  borderRadius: '20px',
+                  display: 'block'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Description */}
+          <div>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: '400', marginBottom: '16px' }}>
+              Somers Live Translator
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', lineHeight: '1.7', fontSize: '0.95rem' }}>
+              주변 언어를 실시간 감지하여 한국어로 번역하는 플래그십 AI 오디오 번역기입니다. 극도로 정제된 비주얼 인터페이스 속에 AI 크루들의 고도화된 번역 파이프라인이 유기적으로 내장되어 있습니다.
+            </p>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '0.8rem', lineHeight: '1.6' }}>
+              A revolutionary AI-powered translator that listens to surrounding speech and translates it in real-time. Built upon advanced agentic pipelines hidden behind an extremely clean tech shell.
+            </p>
+            <Link href="/products/somers" className="btn-accent">
+              Launch Sommerz
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -345,18 +291,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Animation Styles Inline */}
-      <style jsx global>{`
-        @keyframes pulse {
-          0% { opacity: 0.4; }
-          100% { opacity: 1; }
-        }
-        @keyframes bounce {
-          0% { transform: scaleY(0.3); }
-          100% { transform: scaleY(1); }
-        }
-      `}</style>
     </main>
   );
 }

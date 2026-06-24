@@ -9,7 +9,7 @@ export const useProductStore = create((set) => ({
       description: 'Real-time AI-powered translation tool for surrounding foreign languages. / 주변 언어를 실시간으로 감지하고 한국어로 번역하여 송출하는 AI 번역 솔루션.',
       type: 'utility',
       launchUrl: '/products/somers',
-      thumbnail: null, // Minimal text-based fallback will be rendered
+      thumbnail: '/assets/somers-preview.png', // Relates to public/assets/somers-preview.png
       isPremium: true
     },
     {
