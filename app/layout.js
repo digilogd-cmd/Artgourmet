@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
           top: 0, 
           width: '100%', 
           padding: '16px 24px', 
-          background: 'rgba(17, 17, 17, 0.8)', 
+          background: 'rgba(0, 0, 0, 0.8)', 
           backdropFilter: 'blur(16px)', 
           borderBottom: '1px solid var(--border-subtle)',
           zIndex: 100,
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           alignItems: 'center'
         }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'var(--font-heading)' }}>
-            <Link href="/" className="text-glow-yellow" style={{ textDecoration: 'none' }}>
+            <Link href="/" className="text-glow-green" style={{ textDecoration: 'none' }}>
               Art Gourmet
             </Link>
           </div>
@@ -34,9 +34,31 @@ export default function RootLayout({ children }) {
             <Link href="/settings">Settings</Link>
           </div>
         </nav>
-        <div style={{ marginTop: '72px' }}>
+        <div style={{ marginTop: '72px', minHeight: 'calc(100vh - 72px - 140px)' }}>
           {children}
         </div>
+        <footer style={{
+          borderTop: '1px solid var(--border-subtle)',
+          padding: '40px 24px',
+          textAlign: 'center',
+          fontSize: '0.8rem',
+          color: 'var(--text-muted)',
+          background: 'var(--bg-surface)'
+        }}>
+          <div className="container" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            alignItems: 'center'
+          }}>
+            <p style={{ letterSpacing: '0.05em' }}>
+              &copy; {new Date().getFullYear()} ArtGourmet. All rights reserved.
+            </p>
+            <p>
+              Contact: <a href="mailto:artgourmet.official@gmail.com" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>artgourmet.official@gmail.com</a>
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );

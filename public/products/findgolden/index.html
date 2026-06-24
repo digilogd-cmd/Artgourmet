@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>골든 리트리버를 찾아라! (Where's My Goldie?)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app-container">
+
+    <!-- ==========================================================================
+         1. HOME VIEW (Main Menu)
+         ========================================================================== -->
+    <div id="home-view" class="view active">
+      <div class="title-container">
+        <h1 class="main-title">골든 리트리버를 찾아라!</h1>
+        <p class="sub-title">빽빽하고 유머러스한 세상 속에 숨겨진 우리 집 골디를 찾아보세요!</p>
+      </div>
+
+      <div class="hero-graphic">
+        <!-- Main Goldie Character -->
+        <img src="assets/goldie_sprite.png" alt="골든 리트리버">
+      </div>
+
+      <div>
+        <button id="btn-start-game" class="btn">게임 시작하기 🐾</button>
+      </div>
+
+      <div class="instruction-box" style="max-width: 500px; margin-top: 0.5rem;">
+        <h3>🎮 게임 방법</h3>
+        <ul>
+          <li>화면을 드래그하거나 터치하여 복잡한 그림을 구석구석 살펴보세요.</li>
+          <li>우측 상단의 돋보기 힌트와 🔍 확대/축소 버튼을 활용할 수 있습니다.</li>
+          <li>잘못된 곳을 클릭하면 하트가 줄어들어요! 신중하게 클릭해 주세요.</li>
+          <li>단계가 높아질수록 그림이 빽빽해지고 골디의 크기가 아주 작아집니다!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         2. STAGE MAP VIEW (Vertical Winding Trail)
+         ========================================================================== -->
+    <div id="map-view" class="view">
+      <div class="map-header">
+        <h2 class="map-title">🐾 모험의 지도 (10단계 완료)</h2>
+        <button id="btn-map-back" class="btn btn-secondary">메인 메뉴</button>
+      </div>
+
+      <!-- Scrollable wrapper for map -->
+      <div class="map-viewport-wrapper">
+        <div class="map-container">
+          <!-- Connection path between stages (scaled for 800x1200 design space) -->
+          <svg class="map-path-svg" viewBox="0 0 800 1200" preserveAspectRatio="none">
+            <path d="M 400,1100 C 200,1100 150,1000 200,1000 C 250,1000 300,900 350,900 C 400,900 550,800 600,800 C 650,800 550,700 400,700 C 250,700 150,600 200,600 C 250,600 300,500 350,500 C 400,500 550,400 600,400 C 650,400 550,300 450,300 C 350,300 400,150 400,150" class="map-path-line" />
+          </svg>
+
+          <div class="stages-grid">
+            <!-- 10 Stage nodes injected dynamically by game.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         3. GAMEPLAY VIEW
+         ========================================================================== -->
+    <div id="game-view" class="view">
+      <!-- HUD Top Bar -->
+      <div class="game-hud">
+        <button id="btn-game-back" class="ctrl-btn" title="지도 화면으로 돌아가기">🗺️</button>
+        
+        <div class="hud-item">
+          <span id="hud-stage-name" class="font-jua">강아지 운동장 🐾</span>
+        </div>
+
+        <div class="hud-item">
+          <span class="hud-label">남은 시간:</span>
+          <span id="timer-val" class="hud-value">60초</span>
+        </div>
+
+        <div class="hud-item">
+          <span class="hud-label">기회:</span>
+          <div id="hearts-container" class="hearts-container">
+            <!-- Hearts rendered dynamically -->
+          </div>
+        </div>
+
+        <div class="control-bar">
+          <button id="hint-btn" class="ctrl-btn" title="힌트 보기">🔍 힌트 (1)</button>
+          <button id="zoom-out" class="ctrl-btn" title="축소">-</button>
+          <button id="zoom-in" class="ctrl-btn" title="확대">+</button>
+        </div>
+      </div>
+
+      <!-- Scrollable game viewport -->
+      <div id="game-viewport" class="game-viewport">
+        <!-- Container containing scaling background and target -->
+        <div id="canvas-container" class="game-canvas-container">
+          <!-- Injected dynamically by game.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         4. SUCCESS MODAL
+         ========================================================================== -->
+    <div id="success-modal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-icon">🎉</div>
+        <h2 class="modal-title success">찾았다! 멍멍!</h2>
+        
+        <div class="success-dog-celebration"></div>
+
+        <div class="modal-body">
+          <p>우리 집 골디를 멋지게 찾아냈어요!</p>
+          <p style="font-weight: 600; margin-top: 0.5rem; font-size: 1.25rem;">
+            소요 시간: <span id="success-time" style="color: var(--primary-hover);">24초</span>
+          </p>
+          <div id="new-record-notice" class="record-notice" style="display: none;">
+            ✨ 새로운 최고 기록을 달성했습니다! ✨
+          </div>
+        </div>
+
+        <button id="btn-success-action" class="btn">다음 스테이지 도전! ➡️</button>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         5. FAIL MODAL
+         ========================================================================== -->
+    <div id="fail-modal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-icon">😢</div>
+        <h2 class="modal-title fail">놓쳐버렸어요...</h2>
+        <div class="modal-body">
+          <p id="fail-reason">시간이 다 되었어요!</p>
+          <p style="margin-top: 0.5rem;">골디가 다른 친구들 뒤로 더 깊숙이 숨어버린 것 같아요.</p>
+        </div>
+        <button id="btn-fail-action" class="btn" style="background: linear-gradient(135deg, var(--danger) 0%, var(--danger-hover) 100%); box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);">
+          다시 도전하기 🔄
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
