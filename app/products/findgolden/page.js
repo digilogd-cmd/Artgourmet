@@ -29,8 +29,9 @@ export default function FindGoldenApp() {
       overflow: 'hidden'
     }}>
       {allowedAccess ? (
+        /* 외부 GitHub Pages 배포 404 에러 해결을 위해 로컬 복사본 경로(/products/findgolden/index.html)로 긴급 우회 연동 */
         <iframe 
-          src="https://digilogd-cmd.github.io/findgolden/" 
+          src="/products/findgolden/index.html" 
           style={{
             width: '100%',
             height: '100%',
