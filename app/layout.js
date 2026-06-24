@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           alignItems: 'center'
         }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'var(--font-heading)' }}>
-            <Link href="/" className="text-glow-green" style={{ textDecoration: 'none' }}>
+            <Link href="/" className="text-glow-yellow" style={{ textDecoration: 'none' }}>
               Art Gourmet
             </Link>
           </div>
@@ -57,6 +57,11 @@ export default function RootLayout({ children }) {
             <p>
               Contact: <a href="mailto:artgourmet.official@gmail.com" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>artgourmet.official@gmail.com</a>
             </p>
+            <div style={{ display: 'flex', gap: '16px', fontSize: '0.75rem', marginTop: '4px' }}>
+              <Link href="/privacy" className="footer-link">Privacy Policy</Link>
+              <span style={{ color: 'var(--border-subtle)' }}>|</span>
+              <Link href="/terms" className="footer-link">Terms of Service</Link>
+            </div>
           </div>
         </footer>
       </body>

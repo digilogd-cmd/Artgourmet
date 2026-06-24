@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useProductStore } from '../store/useProductStore';
 import { useFreemiumStore } from '../store/useFreemiumStore';
 import Link from 'next/link';
+import AdSenseSlot from '../components/AdSenseSlot';
 
 // AI Crew Data
 const crewMembers = [
@@ -182,6 +183,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AdSense Slot 1: Below Showcase */}
+      <AdSenseSlot slotId="main-showcase-bottom" />
+
       {/* 3. Flagship Project Section [SOMERZ] - Moved below Showcase */}
       <section style={{ marginBottom: '120px' }}>
         <div style={{
@@ -193,7 +197,7 @@ export default function Home() {
           marginBottom: '40px'
         }}>
           <h2 style={{ fontSize: '1.6rem', fontWeight: '400', letterSpacing: '-0.02em' }}>
-            Flagship Project: <span className="text-glow-green">SOMERZ</span>
+            Flagship Project: <span className="text-glow-yellow">SOMERZ</span>
           </h2>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>
             STITCH VIBE ACTIVE
@@ -250,6 +254,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* AdSense Slot 2: Below Somers Flagship */}
+      <AdSenseSlot slotId="somers-flagship-bottom" />
 
       {/* 4. Crew Section (The Crew - AI Agent Personas) */}
       <section>
