@@ -7,7 +7,7 @@ export const useFreemiumStore = create(
       dailyUses: 0,
       lastUseDate: new Date().toDateString(),
       maxFreeUses: 3,
-      isPremium: false,
+      isPremium: true, // Set to true by default for developer testing
 
       // Call this before launching a premium app
       checkAndUse: () => {
