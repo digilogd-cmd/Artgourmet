@@ -11,6 +11,9 @@ export const useFreemiumStore = create(
 
       // Call this before launching a premium app
       checkAndUse: () => {
+        // Force Developer Premium (Overwrites any cached local storage values)
+        set({ isPremium: true });
+        
         const today = new Date().toDateString();
         const { dailyUses, lastUseDate, maxFreeUses, isPremium } = get();
 
