@@ -118,9 +118,9 @@ export default function Home() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
           {products.map(product => (
-            <div key={product.id} className="crew-card" style={{ height: '360px' }}>
+            <div key={product.id} className="showcase-card">
               {/* Product Thumbnail */}
-              <div className="crew-header">
+              <div>
                 {product.thumbnail ? (
                   <div style={{ 
                     height: '140px', 
@@ -128,32 +128,8 @@ export default function Home() {
                     backgroundSize: 'cover',
                     backgroundPosition: product.id === 'somers-translator' ? 'center top' : 'center',
                     border: '1px solid var(--border-subtle)',
-                    marginBottom: '20px',
-                    position: 'relative'
-                  }}>
-                    {/* Golden Vibe Seoul Rule: 하단 검은 반투명 박스 오버레이 + 흰색 텍스트 */}
-                    {product.id === 'find-golden' && (
-                      <div style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        width: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
-                        padding: '6px 12px',
-                        textAlign: 'left'
-                      }}>
-                        <span style={{ 
-                          color: '#ffffff', 
-                          fontSize: '0.75rem', 
-                          fontWeight: 'bold', 
-                          fontFamily: 'var(--font-heading)',
-                          letterSpacing: '0.05em' 
-                        }}>
-                          GOLDEN VIBE SEOUL
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                    marginBottom: '20px'
+                  }} />
                 ) : (
                   <div style={{
                     height: '140px',
@@ -173,12 +149,13 @@ export default function Home() {
                 <h3 style={{ fontSize: '1.4rem', fontWeight: '500', marginBottom: '8px' }}>{product.name}</h3>
               </div>
 
-              <div className="crew-body" style={{ marginTop: '0px' }}>
+              <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <p style={{ 
                   fontSize: '0.85rem', 
                   color: 'var(--text-secondary)', 
                   marginBottom: '24px', 
-                  lineHeight: '1.5' 
+                  lineHeight: '1.5',
+                  flexGrow: 1
                 }}>
                   {product.description}
                 </p>
