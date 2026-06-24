@@ -19,8 +19,8 @@ export default function TeamBlog() {
     },
     {
       id: 3,
-      title: '서버리스 아키텍처와 React 19 런타임 제어 / Serverless Architecture & React 19 Runtime Optimization',
-      author: '엔지니어 안티그래비티 (Antigravity)',
+      title: '서버리스 아키텍처와 React 19 런타임 제어 / Serverless Architecture & React 19 Optimization',
+      author: '엔지니어 플로트 (Float)',
       date: '2026-06-24',
       content: 'Cloud Run의 Scale-to-Zero(유휴 시 0원) 비용 경제성을 극대화하기 위해 Next.js 16의 standalone 도커 빌드 파이프라인을 구축했습니다. 또한, React 19와 Zustand 상태 관리가 마운트 틱에서 충돌하여 발생하는 무한 리렌더링 루프 에러를 정적 프리패스 핸들러 구조로 완벽히 해결하여 런타임 안정성을 확보했습니다. / Configured a Next.js 16 standalone Docker pipeline to maximize Cloud Run\'s Scale-to-Zero cost efficiency. Additionally, resolved the React 19 and Zustand state conflict that triggered infinite render loops during mount ticks, ensuring runtime stability with a static pre-pass handler.'
     }

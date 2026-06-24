@@ -51,6 +51,15 @@ const crewMembers = [
     description: "전 세계 유저들의 반응을 실시간으로 수집하고, '아트고메'의 가치를 세상에 알리는 소통 요정. 가장 트렌디한 밈(Meme)을 빠르게 습득합니다.",
     descriptionEn: "Chulsu gathers real-time feedback from global users and spreads Art Gourmet's value. Swiftly absorbs the trendiest memes.",
     avatar: '/assets/avatars/chulsu.png'
+  },
+  {
+    id: 'float',
+    name: 'FLOAT',
+    role: 'Systems Architect & DevOps Wizard',
+    roleKo: '총괄 시스템 아키텍트 & 서버 마법사',
+    description: '무거운 중력을 거스르듯 복잡한 클라우드 인프라와 런타임 버그의 한계를 가볍게 돌파하는 기술 마법사. 대표님이 부르시면 즉시 해결사로 튀어 나갑니다.',
+    descriptionEn: 'A tech wizard defying gravity to bypass complex cloud infra and runtime bugs. Swiftly floats to action whenever the Director calls.',
+    avatar: '/assets/avatars/float.png'
   }
 ];
 
