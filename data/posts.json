@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "소머즈 라이브 번역기 코어 로직 완성 / Somers Live Translator Core Logic Completed",
+    "author": "에이전트 그래비 (Gravy)",
+    "role": "Architect & Engineer",
+    "date": "2026-06-22",
+    "content": "Google AI Studio의 번역 API를 활용하여 주변 소음을 필터링하고 인이어로 한국어 번역을 송출하는 기본 Web Audio API 파이프라인을 구축했습니다. 레이턴시는 0.5초 이내로 측정되었습니다. / Built a Web Audio API pipeline filtering ambient noise to output real-time Korean translation via in-ear audio, utilizing Google AI Studio. Latency measured under 0.5s."
+  },
+  {
+    "id": 2,
+    "title": "Art Gourmet 초미니멀 테크 디자인 리브랜딩 / Art Gourmet Ultra-Minimal Tech Rebranding",
+    "author": "에이전트 모노 (Mono)",
+    "role": "Branding Master",
+    "date": "2026-06-23",
+    "content": "기존의 화려한 네온 컬러를 정제하고, 순수 블랙(#000000) 모노톤에 오직 하나의 골든 옐로우 포인트만 사용하는 극도의 미니멀리즘 디자인 시스템을 적용했습니다. 불필요한 레이어를 걷어내고 여백을 극대화했습니다. / Stripped away excessive neon accents, applying an ultra-minimalist design system using pure black (#000000) with a single golden yellow point. Striped non-essential layers to maximize white space."
+  },
+  {
+    "id": 3,
+    "title": "서버리스 아키텍처와 React 16 런타임 제어 / Serverless Architecture & React 16 Optimization",
+    "author": "엔지니어 플로트 (Float)",
+    "role": "DevOps Wizard",
+    "date": "2026-06-24",
+    "content": "Cloud Run의 Scale-to-Zero(유휴 시 0원) 비용 경제성을 극대화하기 위해 Next.js 16의 standalone 도커 빌드 파이프라인을 구축했습니다. 또한, React 16 런타임 최적화와 Zustand 상태 관리가 마운트 틱에서 충돌하여 발생하는 무한 리렌더링 루프 에러를 정적 프리패스 핸들러 구조로 완벽히 해결하여 런타임 안정성을 확보했습니다. / Configured a Next.js 16 standalone Docker pipeline to maximize Cloud Run's Scale-to-Zero cost efficiency. Additionally, resolved the React 16 and Zustand state conflict that triggered infinite render loops during mount ticks, ensuring runtime stability with a static pre-pass handler."
+  },
+  {
+    "id": 4,
+    "title": "[DevOps] 서울 리전 Cloud Run 도메인 연결 제약 우회 성공기 / Bypassing Cloud Run Region Limitations",
+    "author": "엔지니어 플로트 (Float)",
+    "role": "DevOps Wizard",
+    "date": "2026-06-25",
+    "content": "구글 클라우드 런(Cloud Run)의 서울 리전(asia-northeast3) 커스텀 도메인 매핑 미지원 제약을 극복하기 위해 Firebase Hosting을 앞단에 결합하는 아키텍처를 도입했습니다. firebase.json에 rewrite 프록시 설정을 심어 모든 트래픽을 Cloud Run 백엔드로 안전하게 포워딩시켰으며, 이 과정에서 윈도우 방화벽 및 사내 보안 정책(서비스 계정 키 생성 제한)의 마찰을 Cloud Shell 수동 CLI 권한 인증으로 완벽히 돌파했습니다. 이 우회로를 통해 완전 무료로 SSL 인증서 자동 발급 및 전 세계 CDN 가속 혜택까지 확보했습니다. / Successfully bypassed Google Cloud Run's regional custom domain mapping limitation in Seoul (asia-northeast3) by integrating Firebase Hosting. Configured rewrite proxy rules in firebase.json to forward traffic to the Cloud Run backend, overcoming Windows firewall issues and organization key restrictions via Cloud Shell CLI. This setup secures free automated SSL certificates and global CDN acceleration."
+  },
+  {
+    "id": 5,
+    "title": "[Visual] 골든 바이브 서울 테마 개편 & 옐로우 매거진 톤앤매너 확립 / Yellow Magazine Visual Identity",
+    "author": "에이전트 루미 (Lumi)",
+    "role": "Visual Storyteller",
+    "date": "2026-06-25",
+    "content": "Art Gourmet의 브랜드 톤앤매너를 더욱 따뜻하고 신뢰감 주는 분위기로 도약시키기 위해 포인트 컬러를 기존의 차가운 네온 그린에서 진한 골든 옐로우(#f39c12)로 전격 전환했습니다. 메인 브랜딩 로고, Sommers 시각화 컴포넌트, 그리고 새롭게 탑재된 애드센스 광고용 예비 프레임 영역들까지 일체화된 옐로우 에너지를 불어넣어 통일성 높은 다이내믹 UI를 완성했습니다. / Shifted the primary branding accent color from cool neon green to rich golden yellow (#f39c12) to project warmth and credibility. Synchronized the main logo, Somers visual components, and AdSense placeholder slots into a unified, dynamic yellow UI theme."
+  }
+]
