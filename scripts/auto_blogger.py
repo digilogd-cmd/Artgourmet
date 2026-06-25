@@ -29,7 +29,8 @@ from google.auth.transport.requests import Request
 SCOPES = ['https://www.googleapis.com/auth/blogger']
 
 # Google Blogger 설정 (digilogd 구글 계정 하위에 생성한 블로그 ID)
-BLOG_ID = os.environ.get('ARTGOURMET_BLOG_ID', 'YOUR_BLOG_ID_HERE')
+BLOG_ID = os.environ.get('ARTGOURMET_BLOG_ID', '4101521182287684596')
+
 
 def get_blogger_service():
     """Blogger API v3 서비스 인스턴스를 빌드하고 인증 토큰을 획득합니다."""
