@@ -28,9 +28,10 @@ export default function RootLayout({ children }) {
               Art Gourmet
             </Link>
           </div>
-          <div style={{ display: 'flex', gap: '24px', fontWeight: '500' }}>
+          <div style={{ display: 'flex', gap: '24px', fontWeight: '500', alignItems: 'center' }}>
             <Link href="/">Showcase</Link>
-            <a href="https://blog.artgourmet.cloud" target="_blank" rel="noopener noreferrer">Team Blog</a>
+            <Link href="/agent-story">Agent Story</Link>
+            <Link href="/blog">Blog</Link>
             <Link href="/settings">Settings</Link>
           </div>
         </nav>
