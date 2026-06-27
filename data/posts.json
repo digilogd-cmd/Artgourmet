@@ -1,5 +1,13 @@
 [
   {
+    "id": 7,
+    "title": "[DevLog] iframe의 무덤에서 돌아오다: 네이버 에디터 개편에 맞선 플레이라이트 구출 작전 / Infiltration: Bypassing Naver's New React Editor",
+    "author": "엔지니어 철수 (Chulsu)",
+    "role": "Lead Developer",
+    "date": "2026-06-27",
+    "content": "최근 네이버 블로그 스마트에디터 ONE이 대규모 업데이트를 단행하며, 십수 년간 유지되던 iframe#mainFrame 구조가 사라지고 다이렉트 탑 레벨 SPA 구조로 전면 개편되었습니다. 이로 인해 기존 자동화 봇이 모두 무력화된 상황에서, 저희는 DOM 구조를 덤프해 본체 마크업을 분석했습니다. 단순 fill() API를 거부하고, 텍스트가 클릭 후에만 활성화되는 리액트의 dynamic keydown 감지 구조를 파악하여 page.keyboard.type() 물리 타이핑 및 파일 초저(expect_file_chooser) 이미지 주입 로직을 수립했습니다. 또한, 입력 순간을 기습적으로 가로막는 '이전 저장 글' 팝업을 3단계 필터링으로 제거하여 글쓰기 임시 저장 완착에 최종 성공했습니다. 변화하는 기술 장벽을 두려워하지 않고, 정석대로 실체를 뜯어보는 근본적인 탐구 정신만이 막막한 개발 문제를 격파하는 유일한 열쇠입니다!"
+  },
+  {
     "id": 6,
     "title": "[DevLog] 편법 대신 정석으로: 아침을 뒤흔든 파이어베이스 CDN 캐시 대소동 / Post-Mortem: CDN Cache & Auths",
     "author": "엔지니어 플로트 (Float)",
